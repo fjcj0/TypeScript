@@ -1,36 +1,13 @@
-type buttons = {
-    up: string,
-    down: string,
-    left: number,
-    right: number,
-    caps: number[],
-    esc: (string | boolean) [],
+type returns = 0 | 1 | -1;
+const compare = (num1: number, num2: number) : returns => {
+    if (num1 === num2) {
+        return 0;
+    }
+    else if (num1 > num2) {
+        return 1;
+    }
+    return -1;
 };
-const getActions  = (btns:buttons) => {
-    console.log(`Up: ${btns.up} ,Down: ${btns.down} ,Right: ${btns.right} ,left: ${btns.left}`);
-    btns.caps.map((cap, index) => (
-        console.log(cap)
-    ));
-       btns.esc.map((es, index) => (
-        console.log(es)
-    ));
-};
-
-getActions({ up: "go up", down: "go down", right: 1, left: 2, caps: [1, 2, 3, 4, 5, 6], esc: ["jack", "johnson", "liz", false, true, "kane"] });
-
-type last = buttons & {
-x: boolean,
-};
-
-const getNewActions  = (btns:last) => {
-    console.log(`Up: ${btns.up} ,Down: ${btns.down} ,Right: ${btns.right} ,left: ${btns.left}`);
-    btns.caps.map((cap, index) => (
-        console.log(cap)
-    ));
-       btns.esc.map((es, index) => (
-        console.log(es)
-       ));
-    console.log('x: ', btns.x);
-};
-
-getNewActions({ up: "go up", down: "go down", right: 1, left: 2, caps: [1, 2, 3, 4, 5, 6], esc: ["jack", "johnson", "liz", false, true, "kane"] ,x:true});
+console.log(compare(20, 15));
+console.log(compare(20, 20));
+console.log(compare(20, 30));
