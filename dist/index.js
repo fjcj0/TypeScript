@@ -1,11 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const showMsg = true;
-const showDetails = (name = "Default Name", age, salary) => {
-    if (showMsg) {
-        return `Hello ${name}, Your Age is ${age}, Your Salary is ${salary}`;
+const addAll = (...nums) => {
+    let result = 0;
+    if (nums) {
+        nums.forEach(num => result += num);
+        return result;
     }
-    return false;
+    return 0;
 };
-console.log(showDetails(undefined, 20, 20.5));
+console.log(addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 //# sourceMappingURL=index.js.map
