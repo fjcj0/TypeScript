@@ -1,23 +1,9 @@
-let all: string | number | boolean = "Hello world!!";
+const showMsg: boolean = true;
 
-console.log(all);
-
-all = 1;
-
-console.log(all);
-
-const letMyFriends: (string | number | boolean)[] = ["Ali", "Mohammed", "Adam", "Jack", "Fadi", 10,true,false];
-
-letMyFriends.map((friend, index) => {
-    console.log((index + 1) + ': ' + friend);
-});
-
-const twoArray: (string | number | boolean | string[] | number[])[] = [1, 2, 3, 4, ['Fadi', 'Ahmed'], [1, 2, 3, 4, 5, 6], ['Jack', 'John'], [10, 11, 12, 13], false, true];
-
-twoArray.forEach((item, index) => {
-    if (Array.isArray(item)) {
-        console.log(`${index + 1}: [${item.join(', ')}]`);
-    } else {
-        console.log(`${index + 1}: ${item}`);
+const showDetails = (name:string,age:number,salary:number):any => {
+    if (showMsg) {
+        return `Hello ${name}, Your Age is ${age}, Your Salary is ${salary}`;
     }
-});
+    return false;
+};
+console.log(showDetails("Jack",20,20.5));
