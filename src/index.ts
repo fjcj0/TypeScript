@@ -1,13 +1,16 @@
-type returns = 0 | 1 | -1;
-const compare = (num1: number, num2: number) : returns => {
-    if (num1 === num2) {
-        return 0;
-    }
-    else if (num1 > num2) {
-        return 1;
-    }
-    return -1;
-};
-console.log(compare(20, 15));
-console.log(compare(20, 20));
-console.log(compare(20, 30));
+let article: [number, string, boolean] = [101, "First Title", true];//non read-only writable
+console.log(article);
+article = [1, "Second Title", false];
+console.log(article);
+article.push(100);
+console.log(article);
+
+const students: readonly [number, string, boolean] = [1, "Jack", true];//read only
+console.log(students);
+
+const [id, name, absence] = students;
+console.log(`Id number: ${id}`);
+
+console.log(`Name: ${name}`);
+
+console.log(`Absence: ${absence}`);
