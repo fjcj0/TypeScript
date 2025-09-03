@@ -11,7 +11,22 @@ class User {
             return `Hello ${this.username} with id ${this.id}`;
         };
     }
+    set setId(id) {
+        this.id = id;
+    }
+    get getId() {
+        return this.id;
+    }
+    get getUsername() {
+        return this.username;
+    }
+    set setUsername(username) {
+        this.username = username;
+    }
 }
-let user = new User("jack223", 1234);
-console.log(user.msg());
+let newUser = new User("Jack Johnson", 100);
+console.log(newUser);
+newUser.setUsername = "Kai Alex";
+newUser.setId = 1;
+console.log(newUser);
 //# sourceMappingURL=index.js.map
