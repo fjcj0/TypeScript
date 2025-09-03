@@ -1,17 +1,29 @@
-interface Settings {
-    theme: boolean,
-    font: string,
-    save(): void,
-}
-class User implements Settings {
-    constructor(public username:string,public theme: boolean,public font :string) {}
-    save(): void{
-        console.log(`Saved successfully ${this.username},${this.theme},${this.font}!!`);
+abstract class Animal {
+    private animal: string;
+    constructor(animal: string) {
+        this.animal = animal;
     }
-    update(): void {
-        console.log(`Updated successfully!!`);
+    abstract printAnimalName(animal: string): void;
+    getAnimalName(): string {
+        return this.animal;
+    }
+    setAnimalName(animal: string) {
+        this.animal = animal;
     }
 }
-
-let firstUser = new User("Jack", true, "Poppins");
-firstUser.save();
+class DangerousSection extends Animal {
+    printAnimalName(animal: string): void {
+        console.log(`Dangerous section has animal called: ${animal}`)
+    }
+}
+class SmallSection extends Animal {
+    printAnimalName(animal: string): void {
+        console.log(`Small section has animal called: ${animal}`)
+    }
+}
+let Small = new SmallSection("Hamster");
+let Dangerous = new DangerousSection("Lion");
+console.log('Small Animal: ' + Small.getAnimalName());
+Small.printAnimalName("Cat");
+console.log('Dangerous Animal: ' + Dangerous.getAnimalName());
+Dangerous.printAnimalName("Tiger");

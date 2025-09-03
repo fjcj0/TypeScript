@@ -1,21 +1,31 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class User {
-    username;
-    theme;
-    font;
-    constructor(username, theme, font) {
-        this.username = username;
-        this.theme = theme;
-        this.font = font;
+class Animal {
+    animal;
+    constructor(animal) {
+        this.animal = animal;
     }
-    save() {
-        console.log(`Saved successfully ${this.username},${this.theme},${this.font}!!`);
+    getAnimalName() {
+        return this.animal;
     }
-    update() {
-        console.log(`Updated successfully!!`);
+    setAnimalName(animal) {
+        this.animal = animal;
     }
 }
-let firstUser = new User("Jack", true, "Poppins");
-firstUser.save();
+class DangerousSection extends Animal {
+    printAnimalName(animal) {
+        console.log(`Dangerous section has animal called: ${animal}`);
+    }
+}
+class SmallSection extends Animal {
+    printAnimalName(animal) {
+        console.log(`Small section has animal called: ${animal}`);
+    }
+}
+let Small = new SmallSection("Hamster");
+let Dangerous = new DangerousSection("Lion");
+console.log('Small Animal: ' + Small.getAnimalName());
+Small.printAnimalName("Cat");
+console.log('Dangerous Animal: ' + Dangerous.getAnimalName());
+Dangerous.printAnimalName("Tiger");
 //# sourceMappingURL=index.js.map
