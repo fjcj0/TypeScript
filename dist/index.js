@@ -1,32 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Player {
-    name;
-    constructor(name) {
-        this.name = name;
-    }
-    attack() {
-        console.log("Attacking now");
-    }
-}
-class Red extends Player {
-    constructor(name) {
-        super(name);
-    }
-    attack() {
-        console.log(`${this.name} Is Attacking Now`);
-    }
-}
-class Blue extends Player {
-    constructor(name) {
-        super(name);
-    }
-    attack() {
-        console.log(`${this.name} Is Attacking Now`);
-    }
-}
-let blueTeam = new Blue("Blue Team");
-let redTeam = new Blue("Red Team");
-blueTeam.attack();
-redTeam.attack();
+const returnType = (val) => {
+    return val;
+};
+console.log(returnType(100));
+console.log(returnType("Jack"));
+console.log(returnType(true));
 //# sourceMappingURL=index.js.map
