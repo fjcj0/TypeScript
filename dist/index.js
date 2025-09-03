@@ -1,5 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let data = "1000";
-console.log(data.repeat(3));
+const values = {
+    one: "Hello",
+    two: 2,
+    three: true,
+    five: false
+};
+console.log(values);
 //# sourceMappingURL=index.js.map
