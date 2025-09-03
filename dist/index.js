@@ -1,18 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class User {
-    value;
-    constructor(value) {
-        this.value = value;
-    }
-    show(msg) {
-        console.log(`${msg} -- ${this.value}`);
+class Collection {
+    data = [];
+    add(item) {
+        this.data.push(item);
     }
 }
-let userOne = new User("Elzero");
-console.log(userOne.value);
-userOne.show("Message");
-let userTwo = new User(100);
-console.log(userTwo.value);
-userTwo.show("Message");
+let itemOne = new Collection();
+itemOne.add({ itemType: "Book", title: "Atomic Habits", isbn: 150510 });
+itemOne.add({ itemType: "Book", title: "Follow Your Heart", isbn: 650650 });
+console.log(itemOne);
+let itemTwo = new Collection();
+itemTwo.add({ itemType: "Game", title: "Uncharted", style: "Action", price: 150 });
+console.log(itemTwo);
 //# sourceMappingURL=index.js.map

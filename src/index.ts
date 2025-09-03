@@ -1,15 +1,29 @@
-class User<T = string> {
-    constructor(public value: T) { }
+interface Book {
+    itemType: string;
+    title: string;
+    isbn: number;
+}
 
-    show(msg: T): void {
-        console.log(`${msg} -- ${this.value}`);
+interface Game {
+    itemType: string;
+    title: string;
+    style: string;
+    price: number;
+}
+
+class Collection<T> {
+    public data: T[] = [];
+
+    add(item: T): void {
+        this.data.push(item);
     }
 }
 
-let userOne = new User<string>("Elzero");
-console.log(userOne.value);
-userOne.show("Message");
+let itemOne = new Collection<Book>();
+itemOne.add({ itemType: "Book", title: "Atomic Habits", isbn: 150510 });
+itemOne.add({ itemType: "Book", title: "Follow Your Heart", isbn: 650650 });
+console.log(itemOne);
 
-let userTwo = new User<number | string>(100);
-console.log(userTwo.value);
-userTwo.show("Message");
+let itemTwo = new Collection<Game>();
+itemTwo.add({ itemType: "Game", title: "Uncharted", style: "Action", price: 150 });
+console.log(itemTwo);
