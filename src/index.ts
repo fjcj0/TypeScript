@@ -9,7 +9,7 @@ interface Moderator {
 }
 
 interface Admin extends User, Moderator{
-    protect: boolean
+    protect?: boolean
 }
 
 let user: Admin = {
@@ -17,7 +17,6 @@ let user: Admin = {
     username: "Jack",
     country: 'Usa',
     role: 'Mod',
-    protect: true
 };
 
 console.log(user);

@@ -5,7 +5,6 @@ let user = {
     username: "Jack",
     country: 'Usa',
     role: 'Mod',
-    protect: true
 };
 console.log(user);
 //# sourceMappingURL=index.js.map
