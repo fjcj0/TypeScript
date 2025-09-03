@@ -1,22 +1,14 @@
-interface User {
-    id: number,
-    username: string,
-    country: string
+class User{
+    username: string;
+    id: number;
+    msg: () => string;
+    constructor(username: string, id: number) {
+        this.username = username;
+        this.id = id;
+        this.msg = () => {
+            return `Hello ${this.username} with id ${this.id}`;
+        }
+    }
 }
-
-interface Moderator { 
-    role: string | number
-}
-
-interface Admin extends User, Moderator{
-    protect?: boolean
-}
-
-let user: Admin = {
-    id: 100,
-    username: "Jack",
-    country: 'Usa',
-    role: 'Mod',
-};
-
-console.log(user);
+let user = new User("jack223", 1234);
+console.log(user.msg());
