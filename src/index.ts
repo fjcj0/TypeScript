@@ -1,15 +1,14 @@
-const logging = (msg: string) : void => {
-    console.log(msg);
-    return; 
+const kids:number = 15;
+const easy: number = 9;
+const medium: number = 6;
+const hard: number = 3;
+enum level {
+    kids = 15,
+    easy = 9,
+    medium = 6,
+    hard = 3
 };
- 
-const fail = (msg: string) => {
-    throw new Error(msg);
-    return;
-};
-
-const alwaysLog = (name: string) : never => {
-    while (true) {
-        console.log(name);
-    }
-};
+let lvl: string = "easy";
+if (lvl === 'easy') {
+    console.log(`The level is ${lvl} and number of seconds is ${level.easy}s`);
+}
