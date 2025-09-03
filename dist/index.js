@@ -1,21 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-let myObject = {
-    username: "Jack",
-    id: 123195619,
-    hire: true,
-    skills: {
-        one: "html",
-        two: "css",
+;
+let user = {
+    id: 100,
+    username: "jack223",
+    country: "usa",
+    sayHello() {
+        return `Hello ${this.username}`;
     },
-    teacher: "Kai"
+    sayWelcome: () => {
+        return `Welcome ${user.username}`;
+    },
+    getDouble(n) {
+        return n * 2;
+    }
 };
-console.log(myObject);
-const newObject = myObject;
-newObject.username = "John";
-newObject.hire = false;
-newObject.id = 124095812;
-newObject.skills.one = "JavaScript";
-newObject.skills.two = "Bootstrap5";
-console.log(newObject);
+console.log(user.sayHello());
+console.log(user.sayWelcome());
+console.log(user.getDouble(4));
 //# sourceMappingURL=index.js.map

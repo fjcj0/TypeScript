@@ -1,28 +1,26 @@
-let myObject: {
-    username: string,
+interface user {
     id: number,
-    hire: boolean,
-    skills: {
-        one: string,
-        two: string,
+    username: string, 
+    country: string,
+    sayHello(): string,
+    sayWelcome: () => string,
+    getDouble(num:number) : number
+};
+let user: user={
+    id: 100,
+    username: "jack223",
+    country: "usa",
+    sayHello() {
+        return `Hello ${this.username}`;
     },
-    readonly teacher: string,
-} = {
-    username: "Jack",
-    id: 123195619,
-    hire: true,
-    skills: {
-        one: "html",
-        two: "css",
+    sayWelcome : () => {
+        return `Welcome ${user.username}`;
     },
-    teacher: "Kai"
-}
-console.log(myObject);
+    getDouble(n) {
+        return n * 2;
+    }
 
-const newObject = myObject;
-newObject.username = "John";
-newObject.hire = false;
-newObject.id = 124095812;
-newObject.skills.one = "JavaScript";
-newObject.skills.two = "Bootstrap5";
-console.log(newObject);
+};
+console.log(user.sayHello());
+console.log(user.sayWelcome());
+console.log(user.getDouble(4));
