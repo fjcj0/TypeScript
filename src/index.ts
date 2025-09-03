@@ -1,21 +1,28 @@
-type A = {
-    one: string,
-    two: number,
-    three: boolean
-};
-type B = A & {
-    four: number;
-};
-type C = {
-    five: boolean;
+let myObject: {
+    username: string,
+    id: number,
+    hire: boolean,
+    skills: {
+        one: string,
+        two: string,
+    },
+    readonly teacher: string,
+} = {
+    username: "Jack",
+    id: 123195619,
+    hire: true,
+    skills: {
+        one: "html",
+        two: "css",
+    },
+    teacher: "Kai"
 }
+console.log(myObject);
 
-type mix_a_with_c = A & C;
-
-const values: mix_a_with_c = {
-    one:"Hello",
-    two:2,
-    three:true,
-    five:false
-};
-console.log(values);
+const newObject = myObject;
+newObject.username = "John";
+newObject.hire = false;
+newObject.id = 124095812;
+newObject.skills.one = "JavaScript";
+newObject.skills.two = "Bootstrap5";
+console.log(newObject);

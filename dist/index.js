@@ -1,10 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const values = {
-    one: "Hello",
-    two: 2,
-    three: true,
-    five: false
+let myObject = {
+    username: "Jack",
+    id: 123195619,
+    hire: true,
+    skills: {
+        one: "html",
+        two: "css",
+    },
+    teacher: "Kai"
 };
-console.log(values);
+console.log(myObject);
+const newObject = myObject;
+newObject.username = "John";
+newObject.hire = false;
+newObject.id = 124095812;
+newObject.skills.one = "JavaScript";
+newObject.skills.two = "Bootstrap5";
+console.log(newObject);
 //# sourceMappingURL=index.js.map
