@@ -1,32 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class User {
-    username;
-    id;
-    msg;
-    constructor(username, id) {
-        this.username = username;
-        this.id = id;
-        this.msg = () => {
-            return `Hello ${this.username} with id ${this.id}`;
-        };
+    static created = 0;
+    static getCount() {
+        console.log(`${this.created} Objects Created!!`);
     }
-    set setId(id) {
-        this.id = id;
-    }
-    get getId() {
-        return this.id;
-    }
-    get getUsername() {
-        return this.username;
-    }
-    set setUsername(username) {
-        this.username = username;
+    constructor(username) {
+        User.created++;
     }
 }
-let newUser = new User("Jack Johnson", 100);
-console.log(newUser);
-newUser.setUsername = "Kai Alex";
-newUser.setId = 1;
-console.log(newUser);
+let firstUser = new User("Jack");
+let secondUser = new User("Johnson");
+let thirdUser = new User("Kai");
+User.getCount();
 //# sourceMappingURL=index.js.map

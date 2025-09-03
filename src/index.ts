@@ -1,31 +1,13 @@
-class User{
-   private username: string;
-   private id: number;
-    msg: () => string;
-    constructor(username: string, id: number) {
-        this.username = username;
-        this.id = id;
-        this.msg = () => {
-            return `Hello ${this.username} with id ${this.id}`;
-        }
+class User {
+    private static created: number = 0;
+    static getCount() : void {
+        console.log(`${this.created} Objects Created!!`);
     }
-    set setId (id:number) {
-       this.id = id;
-    }
-    get getId ():number {
-        return this.id;
-    }
-    get getUsername () : string  {
-        return this.username;
-    }
-    set setUsername (username: string) {
-        this.username = username;
+    constructor(username: string) {
+        User.created++;
     }
 }
-
-let newUser = new User("Jack Johnson", 100);
-console.log(newUser);
-
-newUser.setUsername="Kai Alex";
-newUser.setId=1;
-console.log(newUser);
+let firstUser = new User("Jack");
+let secondUser = new User("Johnson");
+let thirdUser = new User("Kai");
+User.getCount()
