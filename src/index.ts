@@ -1,16 +1,15 @@
-let article: [number, string, boolean] = [101, "First Title", true];//non read-only writable
-console.log(article);
-article = [1, "Second Title", false];
-console.log(article);
-article.push(100);
-console.log(article);
+const logging = (msg: string) : void => {
+    console.log(msg);
+    return; 
+};
+ 
+const fail = (msg: string) => {
+    throw new Error(msg);
+    return;
+};
 
-const students: readonly [number, string, boolean] = [1, "Jack", true];//read only
-console.log(students);
-
-const [id, name, absence] = students;
-console.log(`Id number: ${id}`);
-
-console.log(`Name: ${name}`);
-
-console.log(`Absence: ${absence}`);
+const alwaysLog = (name: string) : never => {
+    while (true) {
+        console.log(name);
+    }
+};
