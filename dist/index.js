@@ -1,21 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-;
 let user = {
     id: 100,
-    username: "jack223",
-    country: "usa",
-    sayHello() {
-        return `Hello ${this.username}`;
-    },
-    sayWelcome: () => {
-        return `Welcome ${user.username}`;
-    },
-    getDouble(n) {
-        return n * 2;
-    }
+    username: "Jack",
+    country: 'Usa',
+    role: 'Mod',
+    protect: true
 };
-console.log(user.sayHello());
-console.log(user.sayWelcome());
-console.log(user.getDouble(4));
+console.log(user);
 //# sourceMappingURL=index.js.map

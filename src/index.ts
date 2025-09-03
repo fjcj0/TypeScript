@@ -1,26 +1,23 @@
-interface user {
+interface User {
     id: number,
-    username: string, 
-    country: string,
-    sayHello(): string,
-    sayWelcome: () => string,
-    getDouble(num:number) : number
-};
-let user: user={
-    id: 100,
-    username: "jack223",
-    country: "usa",
-    sayHello() {
-        return `Hello ${this.username}`;
-    },
-    sayWelcome : () => {
-        return `Welcome ${user.username}`;
-    },
-    getDouble(n) {
-        return n * 2;
-    }
+    username: string,
+    country: string
+}
 
+interface Moderator { 
+    role: string | number
+}
+
+interface Admin extends User, Moderator{
+    protect: boolean
+}
+
+let user: Admin = {
+    id: 100,
+    username: "Jack",
+    country: 'Usa',
+    role: 'Mod',
+    protect: true
 };
-console.log(user.sayHello());
-console.log(user.sayWelcome());
-console.log(user.getDouble(4));
+
+console.log(user);
