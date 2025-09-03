@@ -5,18 +5,18 @@ class Player {
     }
 }
 class Red extends Player {
-    constructor(public name: string) {
+    constructor(name: string) {
         super(name);
     }
-    attack(): void {
+    override attack(): void {
         console.log(`${this.name} Is Attacking Now`);
     }
 }
 class Blue extends Player {
-    constructor(public name: string) {
+    constructor(name: string) {
         super(name);
     }
-    attack(): void {
+    override attack(): void {
         console.log(`${this.name} Is Attacking Now`);
     }
 }

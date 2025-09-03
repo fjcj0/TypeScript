@@ -10,20 +10,16 @@ class Player {
     }
 }
 class Red extends Player {
-    name;
     constructor(name) {
         super(name);
-        this.name = name;
     }
     attack() {
         console.log(`${this.name} Is Attacking Now`);
     }
 }
 class Blue extends Player {
-    name;
     constructor(name) {
         super(name);
-        this.name = name;
     }
     attack() {
         console.log(`${this.name} Is Attacking Now`);
