@@ -1,13 +1,17 @@
-class User {
-    private static created: number = 0;
-    static getCount() : void {
-        console.log(`${this.created} Objects Created!!`);
+interface Settings {
+    theme: boolean,
+    font: string,
+    save(): void,
+}
+class User implements Settings {
+    constructor(public username:string,public theme: boolean,public font :string) {}
+    save(): void{
+        console.log(`Saved successfully ${this.username},${this.theme},${this.font}!!`);
     }
-    constructor(username: string) {
-        User.created++;
+    update(): void {
+        console.log(`Updated successfully!!`);
     }
 }
-let firstUser = new User("Jack");
-let secondUser = new User("Johnson");
-let thirdUser = new User("Kai");
-User.getCount()
+
+let firstUser = new User("Jack", true, "Poppins");
+firstUser.save();

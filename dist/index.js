@@ -1,16 +1,21 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class User {
-    static created = 0;
-    static getCount() {
-        console.log(`${this.created} Objects Created!!`);
+    username;
+    theme;
+    font;
+    constructor(username, theme, font) {
+        this.username = username;
+        this.theme = theme;
+        this.font = font;
     }
-    constructor(username) {
-        User.created++;
+    save() {
+        console.log(`Saved successfully ${this.username},${this.theme},${this.font}!!`);
+    }
+    update() {
+        console.log(`Updated successfully!!`);
     }
 }
-let firstUser = new User("Jack");
-let secondUser = new User("Johnson");
-let thirdUser = new User("Kai");
-User.getCount();
+let firstUser = new User("Jack", true, "Poppins");
+firstUser.save();
 //# sourceMappingURL=index.js.map
