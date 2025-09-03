@@ -1,31 +1,36 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-class Animal {
-    animal;
-    constructor(animal) {
-        this.animal = animal;
+class Player {
+    name;
+    constructor(name) {
+        this.name = name;
     }
-    getAnimalName() {
-        return this.animal;
-    }
-    setAnimalName(animal) {
-        this.animal = animal;
+    attack() {
+        console.log("Attacking now");
     }
 }
-class DangerousSection extends Animal {
-    printAnimalName(animal) {
-        console.log(`Dangerous section has animal called: ${animal}`);
+class Red extends Player {
+    name;
+    constructor(name) {
+        super(name);
+        this.name = name;
+    }
+    attack() {
+        console.log(`${this.name} Is Attacking Now`);
     }
 }
-class SmallSection extends Animal {
-    printAnimalName(animal) {
-        console.log(`Small section has animal called: ${animal}`);
+class Blue extends Player {
+    name;
+    constructor(name) {
+        super(name);
+        this.name = name;
+    }
+    attack() {
+        console.log(`${this.name} Is Attacking Now`);
     }
 }
-let Small = new SmallSection("Hamster");
-let Dangerous = new DangerousSection("Lion");
-console.log('Small Animal: ' + Small.getAnimalName());
-Small.printAnimalName("Cat");
-console.log('Dangerous Animal: ' + Dangerous.getAnimalName());
-Dangerous.printAnimalName("Tiger");
+let blueTeam = new Blue("Blue Team");
+let redTeam = new Blue("Red Team");
+blueTeam.attack();
+redTeam.attack();
 //# sourceMappingURL=index.js.map

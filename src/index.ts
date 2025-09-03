@@ -1,29 +1,27 @@
-abstract class Animal {
-    private animal: string;
-    constructor(animal: string) {
-        this.animal = animal;
-    }
-    abstract printAnimalName(animal: string): void;
-    getAnimalName(): string {
-        return this.animal;
-    }
-    setAnimalName(animal: string) {
-        this.animal = animal;
+class Player {
+    constructor(public name: string) { }
+    attack(): void {
+        console.log("Attacking now");
     }
 }
-class DangerousSection extends Animal {
-    printAnimalName(animal: string): void {
-        console.log(`Dangerous section has animal called: ${animal}`)
+class Red extends Player {
+    constructor(public name: string) {
+        super(name);
+    }
+    attack(): void {
+        console.log(`${this.name} Is Attacking Now`);
     }
 }
-class SmallSection extends Animal {
-    printAnimalName(animal: string): void {
-        console.log(`Small section has animal called: ${animal}`)
+class Blue extends Player {
+    constructor(public name: string) {
+        super(name);
+    }
+    attack(): void {
+        console.log(`${this.name} Is Attacking Now`);
     }
 }
-let Small = new SmallSection("Hamster");
-let Dangerous = new DangerousSection("Lion");
-console.log('Small Animal: ' + Small.getAnimalName());
-Small.printAnimalName("Cat");
-console.log('Dangerous Animal: ' + Dangerous.getAnimalName());
-Dangerous.printAnimalName("Tiger");
+
+let blueTeam = new Blue("Blue Team");
+let redTeam = new Blue("Red Team");
+blueTeam.attack();
+redTeam.attack();
